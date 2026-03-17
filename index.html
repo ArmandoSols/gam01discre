@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Actividad de Gamificación 01 — Cálculo 1</title>
+<title>Actividad de Gamificación 01 — Matemática Discreta</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0f1923;--paper:#f8f4ed;--cream:#fffef9;--accent:#b5451b;--gold:#c9941a;--teal:#1a7a6e;--red:#c0392b;--border:#0f1923;--shadow:6px 6px 0 #0f1923}
@@ -96,7 +96,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
 </head>
 <body>
 <header>
-  <div class="logo">Actividad de Gamificación 01 — Cálculo 1</div>
+  <div class="logo">Actividad de Gamificación 01 — Matemática Discreta</div>
   <div style="display:flex;align-items:center;gap:1rem">
     <div id="timer-box" style="display:none;flex-direction:column;align-items:flex-end">
       <div class="timer-label">Tiempo restante</div>
@@ -110,7 +110,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
   <div class="card-wrap">
     <div class="card">
       <h2 class="card-title">Registro del Estudiante</h2>
-      <p class="card-sub">Cálculo 1</p>
+      <p class="card-sub">Matemática Discreta</p>
       <div class="field">
         <label>Apellidos</label>
         <input type="text" id="inp-apellidos" placeholder="Ej: González Pérez" autocomplete="off">
@@ -161,7 +161,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
     <div class="info-item"><span>Día</span><strong id="disp-dia">—</strong></div>
     <div class="info-item"><span>Horario</span><strong id="disp-horario">—</strong></div>
     <div class="info-item"><span>Cuatrimestre</span><strong id="disp-cuatrimestre">—</strong></div>
-    <div class="info-item"><span>Curso</span><strong>Cálculo 1</strong></div>
+    <div class="info-item"><span>Curso</span><strong>Matemática Discreta</strong></div>
   </div>
   <div id="score-box">
     <div class="score-num" id="final-score">0</div>
@@ -169,7 +169,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
     <div class="score-msg" id="score-msg"></div>
     <div class="score-save" id="score-save"></div>
   </div>
-  <h2 class="puzzle-title">Actividad de Gamificación 01 — Cálculo 1</h2>
+  <h2 class="puzzle-title">Actividad de Gamificación 01 — Matemática Discreta</h2>
   <p class="puzzle-instr">Lea cada definición y escriba la palabra correcta en MAYÚSCULAS, SIN ESPACIOS y SIN TILDES. Presione &quot;Verificar&quot; o Enter para confirmar cada respuesta. Tiene 2 intentos por pregunta. La sopa de letras es solo de referencia visual. Cuando termine, presione &quot;Entregar&quot;.</p>
   <div class="progress-wrap">
     <div class="progress-label"><span>Respondidas</span><span id="prog-text">0 / 0</span></div>
@@ -196,7 +196,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
 const CLUES=[{"id":1,"word":"SUBCONJUNTO","clue":"Conjunto cuyos elementos son todos parte de otro conjunto."},{"id":2,"word":"EXISTENCIAL","clue":"Cuantificador que se usa cuando solo dos elementos de un conjunto satisfacen un predicado lógico."},{"id":3,"word":"PREDICADO","clue":"Funciones con variables que se evalúan como proposiciones."},{"id":4,"word":"INFERENCIA","clue":"Proceso lógico para derivar conclusiones a partir de premisas."},{"id":5,"word":"FALACIA","clue":"Proposición lógica que solo tiene falso como valor de verdad, en cualquier caso."},{"id":6,"word":"CONTINGENCIA","clue":"Proposición lógica que tiene falso y verdadero como valor de verdad, en diferentes casos."},{"id":7,"word":"VERDADERO","clue":"Valor lógico que indica que una proposición es cierta."},{"id":8,"word":"CONJUNTO","clue":"Colecciones bien definidas de objetos que no tienen un orden predeterminado."},{"id":9,"word":"POTENCIA","clue":"Conjunto de todos los subconjuntos posibles de un conjunto dado."},{"id":10,"word":"CUANTIFICADORES","clue":"Expresiones como 'para todo' o 'existe' que indican alcance en predicados sobre los elementos de un conjunto."},{"id":11,"word":"TAUTOLOGIA","clue":"Proposición lógica que solo tiene verdadero como valor de verdad, en cualquier caso."},{"id":12,"word":"EQUIVALENCIA","clue":"Relaciones entre proposiciones que siempre tienen el mismo valor de verdad."},{"id":13,"word":"TABLADEVERDAD","clue":"Representación sistemática de todas las combinaciones posibles de valores de verdad de una proposición lógica."},{"id":14,"word":"CONECTIVOS","clue":"Símbolos que unen o conectan proposiciones lógicas."},{"id":15,"word":"PROPOSICION","clue":"Enunciados con valor de verdad que puede ser falso o verdadero."}];
 const PTS=10;
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxGdtB-XdlZxKrCwxkLDa2k9AYnr3mNscYbvUQGYx70mAeZ6IOdkmKZt8oP9N7WgwEpnQ/exec";
-const CURSO="Cálculo 1";
+const CURSO="Matemática Discreta";
 const CURSO_CORTO = {
   'Introducción al Cálculo': 'Intro',
   'Cálculo 1':               'Calc1',
