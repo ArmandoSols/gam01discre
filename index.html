@@ -195,7 +195,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
 <script>
 const CLUES=[{"id":1,"word":"SUBCONJUNTO","clue":"Conjunto cuyos elementos son todos parte de otro conjunto."},{"id":2,"word":"EXISTENCIAL","clue":"Cuantificador que se usa cuando solo dos elementos de un conjunto satisfacen un predicado lógico."},{"id":3,"word":"PREDICADO","clue":"Funciones con variables que se evalúan como proposiciones."},{"id":4,"word":"INFERENCIA","clue":"Proceso lógico para derivar conclusiones a partir de premisas."},{"id":5,"word":"FALACIA","clue":"Proposición lógica que solo tiene falso como valor de verdad, en cualquier caso."},{"id":6,"word":"CONTINGENCIA","clue":"Proposición lógica que tiene falso y verdadero como valor de verdad, en diferentes casos."},{"id":7,"word":"VERDADERO","clue":"Valor lógico que indica que una proposición es cierta."},{"id":8,"word":"CONJUNTO","clue":"Colecciones bien definidas de objetos que no tienen un orden predeterminado."},{"id":9,"word":"POTENCIA","clue":"Conjunto de todos los subconjuntos posibles de un conjunto dado."},{"id":10,"word":"CUANTIFICADORES","clue":"Expresiones como 'para todo' o 'existe' que indican alcance en predicados sobre los elementos de un conjunto."},{"id":11,"word":"TAUTOLOGIA","clue":"Proposición lógica que solo tiene verdadero como valor de verdad, en cualquier caso."},{"id":12,"word":"EQUIVALENCIA","clue":"Relaciones entre proposiciones que siempre tienen el mismo valor de verdad."},{"id":13,"word":"TABLADEVERDAD","clue":"Representación sistemática de todas las combinaciones posibles de valores de verdad de una proposición lógica."},{"id":14,"word":"CONECTIVOS","clue":"Símbolos que unen o conectan proposiciones lógicas."},{"id":15,"word":"PROPOSICION","clue":"Enunciados con valor de verdad que puede ser falso o verdadero."}];
 const PTS=10;
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxGdtB-XdlZxKrCwxkLDa2k9AYnr3mNscYbvUQGYx70mAeZ6IOdkmKZt8oP9N7WgwEpnQ/exec";
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbx4McV4iv7uRhzrLFB-EV5ihTiFX5zJe2_hs1wuGRjxSnyBOX5xdi4EWOSNKNmsIGDUww/exec";
 const CURSO="Matemática Discreta";
 const CURSO_CORTO = {
   'Introducción al Cálculo': 'Intro',
@@ -563,12 +563,15 @@ async function submitActivity(timeUp=false){
   const saveEl=document.getElementById('score-save');
   if(!SCRIPT_URL){saveEl.textContent='⚠ Resultado no guardado (sin Google Sheets configurado).';return;}
   saveEl.textContent='⏳ Guardando en Google Sheets…';
-  try{
-    syncProgress('final', score);
-    saveEl.textContent='✅ Resultado guardado en Google Sheets.';
-  }catch(err){
-    saveEl.textContent='❌ Error al guardar. Avisa a tu docente.';
-  }
+  // Wait 1.5s to ensure any in-flight 'progreso' requests arrive before 'final'
+  setTimeout(()=>{
+    try{
+      syncProgress('final', score);
+      saveEl.textContent='✅ Resultado guardado en Google Sheets.';
+    }catch(err){
+      saveEl.textContent='❌ Error al guardar. Avisa a tu docente.';
+    }
+  }, 1500);
 }
 // Wire buttons via addEventListener (mobile-safe, avoids inline onclick issues)
 document.addEventListener('DOMContentLoaded', ()=>{
